@@ -1,0 +1,59 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    table{
+        margin-left: 10%;
+    }
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table class="table table-sm table-striped">
+        <tr>
+            <td>{{form.name.label}}:</td>
+            <td>{{form.name}}</td>
+        </tr>
+        <tr>
+            <td>{{form.email.label}}:</td>
+            <td>{{form.email}}</td>
+        </tr>
+        <tr>
+            <td>{{form.adress.label}}:</td>
+            <td>{{form.adress}}<br/></td>
+        </tr>
+        <tr>
+            <td>{{form.gender.label}}:</td>
+            <td>{{form.gender}}</td>
+        </tr>
+        <tr>
+            <td> {{form.age.label}}:</td>
+            <td>{{form.age}}</td>
+        </tr>
+        <tr>
+            <td>{{form.weight.label}}:</td>
+            <td>{{form.weight}}</td>
+        </tr>
+        <tr>
+            <td>{{form.height.label}}:</td>
+            <td>{{form.height}}</td>
+        </tr>
+        <tr>
+            <td>{{form.contact_no.label}}:</td>
+            <td>{{form.contact_no}}</td>
+        </tr>
+        
+        <tr hidden>
+            <td>{{form.gymUser.label}}:</td>
+            <td>{{form.gymUser}}</td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td><input class="btn btn-info" type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+{{form.errors}}
+
+{% endblock %}

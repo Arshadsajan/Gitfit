@@ -1,0 +1,42 @@
+{% load static %}
+  <style>
+      .hello-msg{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        color: #fff;
+        margin-right: 20px;
+      }
+      nav{
+        color: burlywood;
+      }
+  </style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- <img src="{% static 'images/logo.png' %}" alt=""> -->
+    <h1>Gitfit</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    {% if user.is_authenticated %}
+    <span class="hello-msg">hello,{{user.email}}</span>
+    <span><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+    {% else %}
+    <span><a class="hello-msg" href="{% url 'login' %}">Login</a></span>
+    {% endif %}
+  </nav>

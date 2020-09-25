@@ -1,0 +1,19 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="card">
+    <div style="margin: 2%;" class="card">
+    <div class="card-header">
+        <h4>Suggest Diet</h4>
+    </div>
+    <div class="card-body">
+        <h5>{{client.name}}'s BMI is {{bmi}} so is <u>{{recommended.text}}</u>. <a href="">Suggest diet</a> </h5>
+    </div>
+    <div class="card-footer">
+        <h6>Diet Plan:</h6>
+        <p>{{recommended.diet}}</p>
+        <p>{{recommended.example}}</p>
+    </div>
+</div>
+</div>
+
+{% endblock %}

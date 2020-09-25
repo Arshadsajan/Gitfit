@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<p>Are u sure ,You want to delete {{client.name}} .</p>
+<form method="POST" action="">
+    {% csrf_token %}
+    <a href="{% url 'home' %}">Cancel</a>
+    <input class="btn btn-danger" type="submit" value="Delete">
+
+</form>
+{% endblock %}
